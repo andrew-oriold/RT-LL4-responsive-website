@@ -1,0 +1,209 @@
+/* Import a friendly Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+/* Color palette variables for easy changes */
+:root {
+  --primary: #4CAF93;      /* Green */
+  --secondary: #F9F6EE;    /* Light background */
+  --accent: #B2DFDB;       /* Soft teal accent */
+  --text: #333333;         /* Main text color */
+  --white: #ffffff;
+  --shadow: 0 2px 8px rgba(0,0,0,0.06);
+  --nav-border: #4CAF93;   /* Border color for nav buttons */
+}
+
+/* Basic reset for margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply the font to the whole page */
+body {
+  font-family: 'Quicksand', Arial, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the header */
+.site-header {
+  padding: 16px;
+  background-color: var(--primary);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 0 18px 18px; /* Rounded bottom corners */
+  box-shadow: var(--shadow);
+}
+
+/* Style the logo */
+.logo h1 {
+  font-size: 1.7rem;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+/* Style the navigation */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--primary);
+  background: var(--accent); /* Softer accent color */
+  font-size: 1rem;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--nav-border); /* Add a subtle border */
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.main-nav a:hover {
+  background: var(--white);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+/* Hero section styles */
+.hero {
+  background: linear-gradient(120deg, #e0ffe6 0%, #f9f6ee 100%);
+  margin: 24px auto 0 auto;
+  padding: 36px 16px;
+  max-width: 500px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.hero h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* Destinations section styles */
+.destinations {
+  padding: 32px 16px;
+  background: #e6f7ef;
+}
+
+/* Cards container - mobile first: stacked vertically */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* space between cards */
+  align-items: center;
+}
+
+/* Individual card styles */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 24px 16px;
+  max-width: 320px;
+  width: 100%;
+  text-align: center; /* center text */
+  margin: 0 auto;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* Card image styles */
+.card img {
+  display: block;
+  margin: 0 auto 16px auto; /* center image and add space below */
+  width: 100%;
+  max-width: 240px;
+  height: auto; /* make image height adjust automatically */
+  border-radius: 12px;
+}
+
+/* Card title styles */
+.card h3 {
+  margin: 12px 0 8px 0;
+  color: #2e8b57;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+/* Card description styles */
+.card p {
+  color: #444;
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Media query for desktop screens */
+@media (min-width: 600px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    margin-top: 0;
+    gap: 24px;
+  }
+
+  .hero {
+    max-width: 700px;
+    padding: 48px 32px;
+    margin-top: 40px;
+  }
+
+  .cards {
+    gap: 28px; /* increase space between cards */
+  }
+
+  .card {
+    padding: 28px 20px; /* more padding for cards */
+    max-width: 340px;   /* slightly larger cards */
+  }
+
+  .card img {
+    max-width: 300px;   /* larger images on wider screens */
+  }
+}
+
+/* Responsive: side by side on desktop */
+@media (min-width: 800px) {
+  .cards {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+  }
+  /* Make cards larger on desktop */
+  .card {
+    max-width: 400px; /* increased from 320px */
+    padding: 32px 24px; /* more padding for desktop */
+  }
+  .card img {
+    max-width: 340px; /* increase image size for desktop */
+  }
+}
